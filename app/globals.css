@@ -5,7 +5,7 @@
 @layer components{
   .heroBtn{
     @apply px-4 sm:px-6 border border-gray-800 rounded-full p-1 uppercase text-xs ml-2
-    tracking-widest text-gray-500 transition-all hover:border-[#64ffda]/50 hover:text-[#64ffda]/50
+    tracking-widest text-[#ccd6f6] transition-all hover:border-[#64ffda]/50 hover:text-[#64ffda]/50
   }
 
   .contactInput{

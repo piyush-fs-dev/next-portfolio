@@ -1,0 +1,5 @@
+export { default as About } from './about'
+export { default as ContactMe } from './contact-me'
+export { default as Hero } from './hero'
+export { default as Projects } from './projects'
+export { default as Skills } from './skills'
