@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .heroBtn{
+    @apply px-4 sm:px-6 border border-gray-800 rounded-full p-1 uppercase text-xs ml-2
+    tracking-widest text-[#ccd6f6] transition-all hover:border-[#64ffda]/50 hover:text-[#64ffda]/50
+  }
+
+  .contactInput{
+    @apply outline-none bg-slate-400/10 rounded-md border-b px-3 py-2 border-[#242424]
+    text-gray-500 placeholder-gray-500 transition-all focus:border-[#64ffda]/40
+    focus:text-[#64ffda]/40 hover:border-[#64ffda]/40
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family:"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue";
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
