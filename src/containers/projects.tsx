@@ -6,6 +6,7 @@ import { Image } from "@/ui";
 import { useQuery } from "react-query";
 import { Loading, Error } from "@/ui";
 
+
 const fetchData = async () => {
   const res = await fetch(
     "https://portfolio-api-159j.onrender.com/user_details"
@@ -16,6 +17,7 @@ const fetchData = async () => {
 
 type Props = {};
 
+
 const Projects = (props: Props) => {
   const { data, isLoading, isFetching, error, isError } = useQuery(
     "project-data",
@@ -25,9 +27,9 @@ const Projects = (props: Props) => {
   const project: any = data ?? [];
 
   const skillImages = [
-    "/assets/css.png",
-    "/assets/html.png",
-    "/assets/javascript.png",
+    "/assets/images/css.png",
+    "/assets/images/html.png",
+    "/assets/images/javascript.png",
   ];
 
   return (
@@ -67,26 +69,43 @@ const Projects = (props: Props) => {
                     alt="none"
                     className="sm:h-[200px] h-[185px]"
                   />
-                  <span className="flex gap-5 items-center">
-                    <a href={item.dlink} className="text-xl text-gray-400">
+
+                  <div className="flex gap-5 items-center">
+                    {skillImages.map((src, index) => (
+                      <img
+                        src={src}
+                        key={index}
+                        className="h-8"
+                        alt="skill-images"
+                      />
+                    ))}
+                  </div>
+                  <div className="flex gap-10 items-center">
+                    <a
+                      target="_blank"
+                      href={item.dlink}
+                      className="text-xl  text-[#64ffda] flex items-center hover:bg-[#64ffda] hover:px-2 hover:text-black transition-colors duration-200"
+                    >
                       Demo
                     </a>
-                    {skillImages.map((src, index) => (
-                      <img src={src} key={index} className="h-8" alt="" />
-                    ))}
-                    <a href={item.clink} className="text-xl text-gray-400">
+                    <a
+                      target="_blank"
+                      href={item.clink}
+                      className="text-xl  text-[#64ffda] flex items-center hover:bg-[#64ffda] hover:text-black  hover:px-2 transition-colors duration-200"
+                    >
                       Code
                     </a>
-                  </span>
+                  </div>
+
                   <div className="space-y-10 px-0 max-w-6xl">
-                    <h4 className="text-xl sm:text-2xl xl:text-3xl font-semibold text-center mb-[-1em] xl:mb-[-20px]">
-                      <span className="underline decoration-[#64ffda]/50">
+                    <h4 className="text-xl sm:text-2xl xl:text-3xl font-semibold text-center mb-[-1em] xl:mb-[-20px] text-[#ccd6f6]">
+                      <span className="underline decoration-[#64ffda]/50 text-[#ccd6f6]">
                         {`Case Study ${0 + 1} of ${project.length}:`}
                       </span>
                       {` ${item.name}`}
                     </h4>
 
-                    <p className="text-sm md:text-left xl:text-[16.5px]">
+                    <p className="text-sm md:text-left xl:text-[16.5px] text-[#8892b0]">
                       {item.desc}
                     </p>
                   </div>
